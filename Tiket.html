@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CineQuest - Dune: Part Two</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#b8000b",
+                        "background": "#f8f9fa",
+                        "surface-container-high": "#e7e8e9",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#f8f9ff",
+                        "on-tertiary-fixed-variant": "#004689",
+                        "on-primary-fixed": "#410001",
+                        "on-primary-container": "#fff7f6",
+                        "surface": "#f8f9fa",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-secondary-fixed-variant": "#474646",
+                        "outline-variant": "#e9bcb6",
+                        "primary-fixed": "#ffdad5",
+                        "surface-container-low": "#f3f4f5",
+                        "on-background": "#191c1d",
+                        "tertiary-fixed-dim": "#a7c8ff",
+                        "tertiary-container": "#0072d7",
+                        "tertiary": "#005aab",
+                        "secondary": "#5f5e5e",
+                        "surface-container-highest": "#e1e3e4",
+                        "inverse-surface": "#2e3132",
+                        "tertiary-fixed": "#d5e3ff",
+                        "on-primary-fixed-variant": "#930007",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-tertiary-fixed": "#001b3c",
+                        "surface-variant": "#e1e3e4",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#ffb4aa",
+                        "surface-tint": "#c0000c",
+                        "on-surface": "#191c1d",
+                        "on-surface-variant": "#5e3f3b",
+                        "surface-container": "#edeeef",
+                        "on-error-container": "#93000a",
+                        "outline": "#936e69",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#e50914",
+                        "surface-bright": "#f8f9fa",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "error-container": "#ffdad6",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#ffb4aa",
+                        "on-secondary-container": "#656464",
+                        "secondary-container": "#e5e2e1",
+                        "surface-dim": "#d9dadb",
+                        "error": "#ba1a1a"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    spacing: {
+                        "section-gap": "80px",
+                        "container-max": "1280px",
+                        "margin-desktop": "48px",
+                        "margin-mobile": "16px",
+                        "base": "8px",
+                        "gutter": "24px"
+                    },
+                    fontFamily: {
+                        "headline-md": ["Montserrat"],
+                        "display-lg": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "label-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Montserrat"]
+                    },
+                    fontSize: {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background min-h-screen text-on-surface antialiased overflow-x-hidden pt-[72px]">
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  const movieCatalog = {
+    "Gladiator II": { title: "Gladiator II", rating: "R", duration: "2h 28m", genre: "Action, Drama", poster: "https://lh3.googleusercontent.com/aida-public/AB6AXuB-Nem0HG85HVDWqTznPEglFfx0nW6ECsAd-suzJ0wN9Po2Ai-tBU91LSAQpFmdTbOl_9mwhTFWGM29NQlGnh0FLBuk0qbJdj2w_T46hcLk6n5sQtOWW_Pmy7rYAM1RGUqC3WmHCMqpKtDm_StN_yTvuqmLT5o_118PXFuzL3CZ4GqzMxukCnXFLMDsAEmfIDQ2CXqbDcewuR9mTbJtHNf_ZUPryp9oSXIaxdhfvpwhJJaoOUoEPdXdIw", banner: "https://lh3.googleusercontent.com/aida-public/AB6AXuB-Nem0HG85HVDWqTznPEglFfx0nW6ECsAd-suzJ0wN9Po2Ai-tBU91LSAQpFmdTbOl_9mwhTFWGM29NQlGnh0FLBuk0qbJdj2w_T46hcLk6n5sQtOWW_Pmy7rYAM1RGUqC3WmHCMqpKtDm_StN_yTvuqmLT5o_118PXFuzL3CZ4GqzMxukCnXFLMDsAEmfIDQ2CXqbDcewuR9mTbJtHNf_ZUPryp9oSXIaxdhfvpwhJJaoOUoEPdXdIw" },
+    "Interstellar": { title: "Interstellar", rating: "PG-13", duration: "2h 49m", genre: "Sci-Fi, Adventure", poster: "https://lh3.googleusercontent.com/aida-public/AB6AXuDaKR8VvWMot5XJ4F856gdXHNU7Xt4osnB_DBu4mm_r15_gmgO3Lbr1hXokFVoq4y1taJ5R6Be-I61YIIXhbh5ZXRM44PwpFgKIA8gDBkDFkDzAVHgO6njVvLuRiMjvJJlfrlTgm_Zp4cEf7ObYe3WvD5_MLd7bLwT3HCKC3emzQCvsaYTMJWeg_qi3toKZOfVoiDmfd9z0jdeNVMqwX8_ZHdGW0lyPwuMO5Ikr3NR49mx4XOlJAJjd_g", banner: "https://lh3.googleusercontent.com/aida-public/AB6AXuDaKR8VvWMot5XJ4F856gdXHNU7Xt4osnB_DBu4mm_r15_gmgO3Lbr1hXokFVoq4y1taJ5R6Be-I61YIIXhbh5ZXRM44PwpFgKIA8gDBkDFkDzAVHgO6njVvLuRiMjvJJlfrlTgm_Zp4cEf7ObYe3WvD5_MLd7bLwT3HCKC3emzQCvsaYTMJWeg_qi3toKZOfVoiDmfd9z0jdeNVMqwX8_ZHdGW0lyPwuMO5Ikr3NR49mx4XOlJAJjd_g" },
+    "Neon Drive": { title: "Neon Drive", rating: "PG-13", duration: "1h 52m", genre: "Action, Thriller", poster: "https://lh3.googleusercontent.com/aida-public/AB6AXuBPRUgS96XsZm48P53kYWMlIqIAWILnGPuFb69iNPGYqo3DFhNKSo63qUYc8emQg8mHMfuLL6L_nipxW6G4IWbYvNL40ssb5UPPosdg42ECz4Emls3JTOM0NIIqwcNoyLPykEv_kpTkrORVVCBI33U1z7cU4dZabcDLjnCPnoktIvqrwOeBla5im2BYp3sjzWFeUCWMBROJxtN6TG_X2TQOmmw0WQppFM8n9lc_DWEiJh5_aU4YlXGOaA", banner: "https://lh3.googleusercontent.com/aida-public/AB6AXuBPRUgS96XsZm48P53kYWMlIqIAWILnGPuFb69iNPGYqo3DFhNKSo63qUYc8emQg8mHMfuLL6L_nipxW6G4IWbYvNL40ssb5UPPosdg42ECz4Emls3JTOM0NIIqwcNoyLPykEv_kpTkrORVVCBI33U1z7cU4dZabcDLjnCPnoktIvqrwOeBla5im2BYp3sjzWFeUCWMBROJxtN6TG_X2TQOmmw0WQppFM8n9lc_DWEiJh5_aU4YlXGOaA" },
+    "The Silent Partner": { title: "The Silent Partner", rating: "PG-13", duration: "2h 04m", genre: "Mystery, Drama", poster: "https://lh3.googleusercontent.com/aida-public/AB6AXuB9HO61BlstK6Gz9gUOTcDTR7eRL6Om5CICPmhDV_vYzAJbhkAF5W_SjNop9Y1vDUBV9hmPMvgUUzQh3KBYQ8Zyjagy_jmJNsc-VggeH4AiRQZC3b09Vq5KK397Tl3xVSr5b09rK9WOa9aIlxgMkIUtqZU73qgYGbrWG7FRp-Sm3SD0YWXVO4PFn95XEo-_cvYO1C3ZymlkT4s8HHr8JUT4DRRRKlEgufjHC7OcsXwbR3SNVAUAQBAV3w", banner: "https://lh3.googleusercontent.com/aida-public/AB6AXuB9HO61BlstK6Gz9gUOTcDTR7eRL6Om5CICPmhDV_vYzAJbhkAF5W_SjNop9Y1vDUBV9hmPMvgUUzQh3KBYQ8Zyjagy_jmJNsc-VggeH4AiRQZC3b09Vq5KK397Tl3xVSr5b09rK9WOa9aIlxgMkIUtqZU73qgYGbrWG7FRp-Sm3SD0YWXVO4PFn95XEo-_cvYO1C3ZymlkT4s8HHr8JUT4DRRRKlEgufjHC7OcsXwbR3SNVAUAQBAV3w" },
+    "Timeless": { title: "Timeless", rating: "PG", duration: "1h 48m", genre: "Romance, Drama", poster: "https://lh3.googleusercontent.com/aida-public/AB6AXuCeBNy4hs2gnnCSQqn4onK5y_pyxcfRh0vB3o57ruIqZmVFGUVxFXZCKwm3DtucHir6xF_Uu9ME8eBUSYKNYb3ERGi89zeg0aWc7MOerFP9MHyJWEZBtXm-t0828tJA86WNVS9YjhQxXcguVMksop-jhaaym0ecP5HljWWc86zY2DpIyv8aUkcVXX6dQbkbyNILPeTThgjrtgctWNbSJYKJbPM4sv-oIDtVE6m_x19MWVM6Mizpkw0krA", banner: "https://lh3.googleusercontent.com/aida-public/AB6AXuCeBNy4hs2gnnCSQqn4onK5y_pyxcfRh0vB3o57ruIqZmVFGUVxFXZCKwm3DtucHir6xF_Uu9ME8eBUSYKNYb3ERGi89zeg0aWc7MOerFP9MHyJWEZBtXm-t0828tJA86WNVS9YjhQxXcguVMksop-jhaaym0ecP5HljWWc86zY2DpIyv8aUkcVXX6dQbkbyNILPeTThgjrtgctWNbSJYKJbPM4sv-oIDtVE6m_x19MWVM6Mizpkw0krA" },
+    "Dune: Part Two": { title: "Dune: Part Two", rating: "PG-13", duration: "2h 46m", genre: "Action, Sci-Fi", poster: "https://lh3.googleusercontent.com/aida-public/AB6AXuCMtmdB6JzdsOq-JYxZvSHGhTLhCzsdxhKffZic4fPDM7KJctKtlhyaGjRAP_TrGB785n_Wqp9hErTyju06xr61QD4hR57iwDdT9RJLZGxVOQzWYwV1MxYuZ5yywbFRtDOIDYs835E_bGidIsCwBFTf0s0STSawbecrcU7rYZVGWnOaI-F0eROUTJLMQmkmy6Gii04wJL71l5Jv8iwq4PdGi9b_SNGFpR4O9elZau0Pw4OPRvAF3tnzgg", banner: "https://lh3.googleusercontent.com/aida-public/AB6AXuCMtmdB6JzdsOq-JYxZvSHGhTLhCzsdxhKffZic4fPDM7KJctKtlhyaGjRAP_TrGB785n_Wqp9hErTyju06xr61QD4hR57iwDdT9RJLZGxVOQzWYwV1MxYuZ5yywbFRtDOIDYs835E_bGidIsCwBFTf0s0STSawbecrcU7rYZVGWnOaI-F0eROUTJLMQmkmy6Gii04wJL71l5Jv8iwq4PdGi9b_SNGFpR4O9elZau0Pw4OPRvAF3tnzgg" }
+  };
+
+  const castCatalog = {
+    "Gladiator II": [
+      { name: "Paul Mescal", role: "Lucius", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80" },
+      { name: "Pedro Pascal", role: "Marcus Acacius", image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=900&q=80" },
+      { name: "Connie Nielsen", role: "Lucilla", image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80" },
+      { name: "Denzel Washington", role: "Macrinus", image: "https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=900&q=80" }
+    ],
+    "Interstellar": [
+      { name: "Matthew McConaughey", role: "Cooper", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80" },
+      { name: "Anne Hathaway", role: "Brand", image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80" },
+      { name: "Jessica Chastain", role: "Murph", image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=900&q=80" },
+      { name: "Michael Caine", role: "Professor Brand", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80" }
+    ],
+    "Neon Drive": [
+      { name: "Ryan Gosling", role: "Aiden", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80" },
+      { name: "Margot Robbie", role: "Juno", image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80" },
+      { name: "Simu Liu", role: "Nyx", image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=900&q=80" },
+      { name: "John Boyega", role: "Kade", image: "https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=900&q=80" }
+    ],
+    "The Silent Partner": [
+      { name: "Emily Blunt", role: "Mara", image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=900&q=80" },
+      { name: "Ben Affleck", role: "Hale", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80" },
+      { name: "Zendaya", role: "Lena", image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80" },
+      { name: "Tom Hiddleston", role: "Dane", image: "https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=900&q=80" }
+    ],
+    "Timeless": [
+      { name: "Florence Pugh", role: "Iris", image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80" },
+      { name: "John Krasinski", role: "Noah", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80" },
+      { name: "Saoirse Ronan", role: "Elise", image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80" },
+      { name: "Pedro Pascal", role: "Theo", image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=900&q=80" }
+    ],
+    "Dune: Part Two": [
+      { name: "Timothée Chalamet", role: "Paul Atreides", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuB3OS8jlzSQznk2ez3jTyG8YNqDjgxW4GK6W91kTrt3mNJMn6CMUTAZOMY9f5HYb78zC3fW3EdHeFODLHf6KJgceC97v_dgbZCHr9aYD_U8Wx_K9OOZ_Q-ie684yqccii7V6cSAVcRTYVr_a2cL_3HGi-aLNhxmJUbLbcmEEBzurJ-8XGcSG9UVcgWwF1wpdepWn91F0ZBvpugKACCygpc-ihi3R2HvDOljkfNzhy9lerArqbqq7z7qmw" },
+      { name: "Zendaya", role: "Chani", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDbDFVajft1gOARrEwTsGnak3VxXUwROPCr-8GAPMaIPv6soCX-PkMWMiTt6a3FjcskIshO61JZ10dH_R2wbI6xgwRA4FrhcPPLNl0O7GbKtLEWOe6su7vBew29awDsixFeFzXogrLdBEEtZ0hbWIhqOrSBkHuN8D2cI3IeiG0J5Bf5b7Qjd0a5Y6yh80zhK6hyzju3ET-zWP429FbkFha0BfOG4jE-QO31157pqyUbmkMk7m3rrE8hSQ" },
+      { name: "Rebecca Ferguson", role: "Lady Jessica", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDzqCnW8AdpYC-cB-IRGORtGXm34_nfgLkTSKl0ZyJf0q6VyTpuQCSGydm3VIMjN8YEtulJdr73qaqMV_egttt63cDbs6WqDIRy_WzxoRWt3RHWXXlsvKaVIG9yGvqG9ogpg_HWfqaOh695T89Gx9PLdNkKcg0dFNJabpc7_jktgvudnWwGyH9e32sZ6o6G52bR8qK_lVlBfbYqyRebU6rBJI0bwY1gcODd9LbhgyA1az1MgB9DXAG8kw" },
+      { name: "Javier Bardem", role: "Stilgar", image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBBNe0G3jEkTx_SrqTsA9sp6Tqp0HbjdBZy9IhtZVM6sqZIAlzLohwbvhN1qaeY-zaFvX-J8I65NSCImDMIlUBAKCgCI7JSHoSGVTe5pwkDeJPtglg-KadTnk7e46kCkDgoRiP4CylB5ryz6P-umF1N2b8taUh2iT352e-GfXZ-UZQTGSx2-p7IrBk_nRBLGQKPsvhkn13R3zGRdLcOb1BakkC7L0_FIBzPI-J2WkR8nyVFDeqSlMeKRg" }
+    ]
+  };
+
+  const selectedMovie = new URLSearchParams(window.location.search).get('movie') || 'Dune: Part Two';
+  const movie = movieCatalog[selectedMovie] || movieCatalog['Dune: Part Two'];
+  const castMembers = castCatalog[selectedMovie] || castCatalog['Dune: Part Two'];
+
+  const castCards = document.querySelectorAll('[data-cast-slot]');
+  castCards.forEach((card, index) => {
+    const member = castMembers[index] || castMembers[0];
+    if (!member) return;
+
+    const image = card.querySelector('img');
+    const name = card.querySelector('h3');
+    const role = card.querySelector('p');
+
+    if (image) image.src = member.image;
+    if (name) name.textContent = member.name;
+    if (role) role.textContent = member.role;
+  });
+
+  const movieTitle = document.getElementById('seat-movie-title');
+  if (movieTitle) movieTitle.textContent = movie.title;
+  const movieSubtitle = document.getElementById('seat-movie-subtitle');
+  if (movieSubtitle) movieSubtitle.textContent = movie.genre + ' • ' + movie.duration;
+  const moviePoster = document.getElementById('seat-movie-poster');
+  if (moviePoster) moviePoster.src = movie.poster;
+
+  const pageTitle = document.querySelector('title');
+  if (pageTitle) pageTitle.textContent = 'CineQuest - ' + movie.title;
+
+  const heroTitle = document.getElementById('seat-hero-title');
+  if (heroTitle) heroTitle.textContent = movie.title;
+  const heroBlurb = document.getElementById('seat-hero-blurb');
+  if (heroBlurb) heroBlurb.textContent = movie.title + ' • IMAX 2D • 7:30 PM';
+
+  document.querySelectorAll('a[href*="Final step.html"]').forEach((link) => {
+    const href = new URL(link.getAttribute('href'), window.location.href);
+    href.searchParams.set('movie', selectedMovie);
+    link.setAttribute('href', href.pathname + href.search);
+  });
+});
+</script>
+<!-- TopAppBar -->
+<header class="bg-inverse-surface dark:bg-inverse-surface shadow-md fixed top-0 left-0 w-full z-50 flex items-center justify-between px-margin-desktop h-[72px] docked full-width">
+<div class="flex items-center gap-4 hover:opacity-80 transition-opacity cursor-pointer">
+<a href="Main.html" class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary dark:text-primary-container" style="font-size: 32px;">movie</span>
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-container">CineQuest</span>
+</a>
+</div>
+<div class="flex items-center gap-2 hover:opacity-80 transition-opacity cursor-pointer">
+<span class="font-label-md text-label-md text-primary dark:text-primary-container">Location</span>
+<span class="material-symbols-outlined text-primary dark:text-primary-container">location_on</span>
+</div>
+</header>
+<!-- Hero Banner -->
+<section class="relative w-full h-[60vh] min-h-[500px] bg-inverse-surface group overflow-hidden">
+<div class="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" data-alt="A wide, epic cinematic shot of a vast desert landscape from Dune Part Two, featuring massive, textured sand dunes under a harsh, blazing sun. The scene captures a profound, sci-fi atmosphere with dramatic lighting highlighting the sweeping curves of the sand. The visual style is premium and corporate modern, utilizing a sophisticated palette of deep oranges, stark blacks, and high-contrast shadows to evoke a sense of immense scale and tension." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCMtmdB6JzdsOq-JYxZvSHGhTLhCzsdxhKffZic4fPDM7KJctKtlhyaGjRAP_TrGB785n_Wqp9hErTyju06xr61QD4hR57iwDdT9RJLZGxVOQzWYwV1MxYuZ5yywbFRtDOIDYs835E_bGidIsCwBFTf0s0STSawbecrcU7rYZVGWnOaI-F0eROUTJLMQmkmy6Gii04wJL71l5Jv8iwq4PdGi9b_SNGFpR4O9elZau0Pw4OPRvAF3tnzgg');">
+</div>
+<!-- Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface via-inverse-surface/60 to-transparent"></div>
+<!-- Hero Content -->
+<div class="absolute bottom-0 left-0 w-full px-margin-desktop pb-section-gap max-w-container-max mx-auto flex items-end justify-between">
+<div class="space-y-4 max-w-3xl">
+<h1 id="seat-hero-title" class="font-display-lg text-display-lg text-on-primary">Dune: Part Two</h1>
+<p id="seat-hero-blurb" class="font-body-lg text-body-lg text-surface-container-high opacity-90 max-w-xl">Paul Atreides unites with Chani and the Fremen while on a warpath of revenge against the conspirators who destroyed his family.</p>
+</div>
+<!-- Play Trailer Button -->
+<button aria-label="Play Trailer" class="flex items-center justify-center w-16 h-16 rounded-full border-2 border-on-primary text-on-primary hover:bg-on-primary hover:text-inverse-surface transition-all duration-300 hover:scale-110 shadow-[0_4px_20px_rgba(0,0,0,0.5)] cursor-pointer group/btn">
+<span class="material-symbols-outlined ml-1 text-4xl group-hover/btn:text-inverse-surface" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+</section>
+<!-- Main Content Area -->
+<main class="max-w-container-max mx-auto px-margin-desktop py-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Left Column: Synopsis & Cast -->
+<div class="md:col-span-8 space-y-16">
+<!-- Synopsis Section -->
+<section class="space-y-6">
+<h2 class="font-headline-lg text-headline-lg text-on-surface flex items-center gap-3">
+<span class="w-1.5 h-8 bg-primary rounded-full block"></span>
+                        Storyline
+                    </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                        "Dune: Part Two" will explore the mythic journey of Paul Atreides as he unites with Chani and the Fremen while on a warpath of revenge against the conspirators who destroyed his family. Facing a choice between the love of his life and the fate of the known universe, he endeavors to prevent a terrible future only he can foresee. The visual spectacle continues the deeply philosophical and visceral narrative established in the first installment, diving deeper into the intricate politics and ecological wonders of Arrakis.
+                    </p>
+</section>
+<!-- Cast Section (Bento-style Grid) -->
+<section class="space-y-6">
+<h2 class="font-headline-lg text-headline-lg text-on-surface flex items-center gap-3">
+<span class="w-1.5 h-8 bg-primary rounded-full block"></span>
+                        Top Cast
+                    </h2>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+<div data-cast-slot="0" class="relative group rounded-xl overflow-hidden aspect-[2/3] bg-surface-container-high shadow-sm hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] hover:-translate-y-1 transition-all duration-300">
+<img alt="Cast Member" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3OS8jlzSQznk2ez3jTyG8YNqDjgxW4GK6W91kTrt3mNJMn6CMUTAZOMY9f5HYb78zC3fW3EdHeFODLHf6KJgceC97v_dgbZCHr9aYD_U8Wx_K9OOZ_Q-ie684yqccii7V6cSAVcRTYVr_a2cL_3HGi-aLNhxmJUbLbcmEEBzurJ-8XGcSG9UVcgWwF1wpdepWn91F0ZBvpugKACCygpc-ihi3R2HvDOljkfNzhy9lerArqbqq7z7qmw"/>
+<div class="absolute bottom-0 w-full p-4 bg-gradient-to-t from-inverse-surface/90 to-transparent">
+<h3 class="font-label-md text-label-md text-on-primary">Timothée Chalamet</h3>
+<p class="font-label-sm text-label-sm text-surface-container-high">Paul Atreides</p>
+</div>
+</div>
+<div data-cast-slot="1" class="relative group rounded-xl overflow-hidden aspect-[2/3] bg-surface-container-high shadow-sm hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] hover:-translate-y-1 transition-all duration-300">
+<img alt="Cast Member" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbDFVajft1gOARrEwTsGnak3VxXUwROPCr-8GAPMaIPv6soCX-PkMWMiTt6a3FjcskIshO61JZ10dH_R2wbI6xgwRA4FrhcPPLNl0O7GbKtLEWOe6su7vBew29awDsixFeFzXogrLdBEEtZ0hbWIhqOrSBkHuN8D2cI3IeiG0J5Bf5b7Qjd0a5Y6yh80zhK6hyzju3ET-zWP429FbkFha0BfOG4jE-QO31157pqyUbmkMk7m3rrE8hSQ"/>
+<div class="absolute bottom-0 w-full p-4 bg-gradient-to-t from-inverse-surface/90 to-transparent">
+<h3 class="font-label-md text-label-md text-on-primary">Zendaya</h3>
+<p class="font-label-sm text-label-sm text-surface-container-high">Chani</p>
+</div>
+</div>
+<div data-cast-slot="2" class="relative group rounded-xl overflow-hidden aspect-[2/3] bg-surface-container-high shadow-sm hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] hover:-translate-y-1 transition-all duration-300">
+<img alt="Cast Member" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzqCnW8AdpYC-cB-IRGORtGXm34_nfgLkTSKl0ZyJf0q6VyTpuQCSGydm3VIMjN8YEtulJdr73qaqMV_egttt63cDbs6WqDIRy_WzxoRWt3RHWXXlsvKaVIG9yGvqG9ogpg_HWfqaOh695T89Gx9PLdNkKcg0dFNJabpc7_jktgvudnWwGyH9e32sZ6o6G52bR8qK_lVlBfbYqyRebU6rBJI0bwY1gcODd9LbhgyA1az1MgB9DXAG8kw"/>
+<div class="absolute bottom-0 w-full p-4 bg-gradient-to-t from-inverse-surface/90 to-transparent">
+<h3 class="font-label-md text-label-md text-on-primary">Rebecca Ferguson</h3>
+<p class="font-label-sm text-label-sm text-surface-container-high">Lady Jessica</p>
+</div>
+</div>
+<div data-cast-slot="3" class="relative group rounded-xl overflow-hidden aspect-[2/3] bg-surface-container-high shadow-sm hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] hover:-translate-y-1 transition-all duration-300">
+<img alt="Cast Member" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBNe0G3jEkTx_SrqTsA9sp6Tqp0HbjdBZy9IhtZVM6sqZIAlzLohwbvhN1qaeY-zaFvX-J8I65NSCImDMIlUBAKCgCI7JSHoSGVTe5pwkDeJPtglg-KadTnk7e46kCkDgoRiP4CylB5ryz6P-umF1N2b8taUh2iT352e-GfXZ-UZQTGSx2-p7IrBk_nRBLGQKPsvhkn13R3zGRdLcOb1BakkC7L0_FIBzPI-J2WkR8nyVFDeqSlMeKRg"/>
+<div class="absolute bottom-0 w-full p-4 bg-gradient-to-t from-inverse-surface/90 to-transparent">
+<h3 class="font-label-md text-label-md text-on-primary">Javier Bardem</h3>
+<p class="font-label-sm text-label-sm text-surface-container-high">Stilgar</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Sidebar Info & CTA -->
+<div class="md:col-span-4 relative">
+<!-- Sticky Container for Desktop -->
+<div class="sticky top-[100px] space-y-8">
+<!-- Movie Details Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-surface-variant p-8 space-y-6">
+<div class="flex flex-col gap-6">
+<!-- Detail Item -->
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary text-2xl mt-0.5" style="font-variation-settings: 'FILL' 1;">movie</span>
+<div>
+<h4 class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-1">Genre</h4>
+<p class="font-body-md text-body-md text-on-surface font-medium">Sci-Fi, Adventure, Drama</p>
+</div>
+</div>
+<!-- Detail Item -->
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary text-2xl mt-0.5" style="font-variation-settings: 'FILL' 1;">schedule</span>
+<div>
+<h4 class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-1">Duration</h4>
+<p class="font-body-md text-body-md text-on-surface font-medium">2h 46m</p>
+</div>
+</div>
+<!-- Detail Item -->
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary text-2xl mt-0.5" style="font-variation-settings: 'FILL' 1;">language</span>
+<div>
+<h4 class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-1">Language</h4>
+<p class="font-body-md text-body-md text-on-surface font-medium">English (CC, AD available)</p>
+</div>
+</div>
+<!-- Detail Item -->
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary text-2xl mt-0.5" style="font-variation-settings: 'FILL' 1;">stars</span>
+<div>
+<h4 class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-1">Rating</h4>
+<div class="inline-block px-2 py-1 bg-surface-container-high rounded border border-surface-variant font-label-sm text-label-sm font-bold text-on-surface mt-1">PG-13</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Prominent CTA -->
+<a href="Final step.html" class="w-full bg-primary-container text-on-primary py-5 rounded-xl font-label-md text-label-md uppercase tracking-wider font-bold shadow-[0_4px_20px_rgba(229,9,20,0.3)] hover:shadow-[0_8px_32px_rgba(229,9,20,0.5)] hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3 group">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">confirmation_number</span>
+                        Select Showtimes
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-surface-container-highest w-full py-section-gap px-margin-desktop flex flex-col md:flex-row justify-between items-center border-t border-outline-variant flat no shadows">
+<div class="font-headline-md text-headline-md text-primary mb-6 md:mb-0">
+            CineQuest
+        </div>
+<nav class="flex flex-wrap justify-center gap-6 md:gap-8 mb-6 md:mb-0">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Help Center</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Us</a>
+</nav>
+<div class="font-body-md text-body-md text-on-surface-variant">
+            © 2024 CineQuest. All Rights Reserved.
+        </div>
+</footer>
+</body></html>

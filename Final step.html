@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Select Seats - CineQuest</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "primary": "#b8000b",
+                            "background": "#f8f9fa",
+                            "surface-container-high": "#e7e8e9",
+                            "on-tertiary": "#ffffff",
+                            "on-tertiary-container": "#f8f9ff",
+                            "on-tertiary-fixed-variant": "#004689",
+                            "on-primary-fixed": "#410001",
+                            "on-primary-container": "#fff7f6",
+                            "surface": "#f8f9fa",
+                            "on-secondary-fixed": "#1c1b1b",
+                            "on-secondary-fixed-variant": "#474646",
+                            "outline-variant": "#e9bcb6",
+                            "primary-fixed": "#ffdad5",
+                            "surface-container-low": "#f3f4f5",
+                            "on-background": "#191c1d",
+                            "tertiary-fixed-dim": "#a7c8ff",
+                            "tertiary-container": "#0072d7",
+                            "tertiary": "#005aab",
+                            "secondary": "#5f5e5e",
+                            "surface-container-highest": "#e1e3e4",
+                            "inverse-surface": "#2e3132",
+                            "tertiary-fixed": "#d5e3ff",
+                            "on-primary-fixed-variant": "#930007",
+                            "secondary-fixed": "#e5e2e1",
+                            "on-tertiary-fixed": "#001b3c",
+                            "surface-variant": "#e1e3e4",
+                            "on-secondary": "#ffffff",
+                            "inverse-primary": "#ffb4aa",
+                            "surface-tint": "#c0000c",
+                            "on-surface": "#191c1d",
+                            "on-surface-variant": "#5e3f3b",
+                            "surface-container": "#edeeef",
+                            "on-error-container": "#93000a",
+                            "outline": "#936e69",
+                            "inverse-on-surface": "#f0f1f2",
+                            "surface-container-lowest": "#ffffff",
+                            "primary-container": "#e50914",
+                            "surface-bright": "#f8f9fa",
+                            "on-primary": "#ffffff",
+                            "secondary-fixed-dim": "#c8c6c5",
+                            "error-container": "#ffdad6",
+                            "on-error": "#ffffff",
+                            "primary-fixed-dim": "#ffb4aa",
+                            "on-secondary-container": "#656464",
+                            "secondary-container": "#e5e2e1",
+                            "surface-dim": "#d9dadb",
+                            "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.125rem",
+                            "lg": "0.25rem",
+                            "xl": "0.5rem",
+                            "full": "0.75rem"
+                    },
+                    "spacing": {
+                            "section-gap": "80px",
+                            "container-max": "1280px",
+                            "margin-desktop": "48px",
+                            "margin-mobile": "16px",
+                            "base": "8px",
+                            "gutter": "24px"
+                    },
+                    "fontFamily": {
+                            "headline-md": [
+                                    "Montserrat"
+                            ],
+                            "display-lg": [
+                                    "Montserrat"
+                            ],
+                            "headline-lg-mobile": [
+                                    "Montserrat"
+                            ],
+                            "label-md": [
+                                    "Inter"
+                            ],
+                            "label-sm": [
+                                    "Inter"
+                            ],
+                            "body-lg": [
+                                    "Inter"
+                            ],
+                            "body-md": [
+                                    "Inter"
+                            ],
+                            "headline-lg": [
+                                    "Montserrat"
+                            ]
+                    },
+                    "fontSize": {
+                            "headline-md": [
+                                    "24px",
+                                    {
+                                            "lineHeight": "32px",
+                                            "fontWeight": "600"
+                                    }
+                            ],
+                            "display-lg": [
+                                    "48px",
+                                    {
+                                            "lineHeight": "56px",
+                                            "letterSpacing": "-0.02em",
+                                            "fontWeight": "700"
+                                    }
+                            ],
+                            "headline-lg-mobile": [
+                                    "24px",
+                                    {
+                                            "lineHeight": "32px",
+                                            "fontWeight": "700"
+                                    }
+                            ],
+                            "label-md": [
+                                    "14px",
+                                    {
+                                            "lineHeight": "20px",
+                                            "letterSpacing": "0.05em",
+                                            "fontWeight": "600"
+                                    }
+                            ],
+                            "label-sm": [
+                                    "12px",
+                                    {
+                                            "lineHeight": "16px",
+                                            "fontWeight": "500"
+                                    }
+                            ],
+                            "body-lg": [
+                                    "18px",
+                                    {
+                                            "lineHeight": "28px",
+                                            "fontWeight": "400"
+                                    }
+                            ],
+                            "body-md": [
+                                    "16px",
+                                    {
+                                            "lineHeight": "24px",
+                                            "fontWeight": "400"
+                                    }
+                            ],
+                            "headline-lg": [
+                                    "32px",
+                                    {
+                                            "lineHeight": "40px",
+                                            "fontWeight": "700"
+                                    }
+                            ]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .seat {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px 8px 4px 4px;
+            margin: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+        
+        .seat::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 10%;
+            width: 80%;
+            height: 4px;
+            border-radius: 2px;
+        }
+
+        .seat-available {
+            border: 2px solid #E9ECEF;
+            background-color: white;
+        }
+        
+        .seat-available:hover {
+            border-color: #b8000b;
+        }
+
+        .seat-selected {
+            background-color: #E50914;
+            border: 2px solid #E50914;
+        }
+        
+        .seat-selected::after {
+            background-color: white;
+            opacity: 0.5;
+        }
+
+        .seat-occupied {
+            background-color: #DEE2E6;
+            border: 2px solid #DEE2E6;
+            cursor: not-allowed;
+            overflow: hidden;
+        }
+        
+        .seat-occupied::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -10%;
+            width: 120%;
+            height: 2px;
+            background-color: #999;
+            transform: rotate(45deg);
+        }
+
+        .seat-vip {
+            border: 2px solid #FFD700;
+            background-color: white;
+        }
+        
+        .seat-vip:hover {
+            background-color: #FFF9E6;
+        }
+
+        .screen-curve {
+            width: 100%;
+            height: 60px;
+            border-top: 4px solid #121212;
+            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+            position: relative;
+            box-shadow: 0 -20px 40px rgba(0,0,0,0.05);
+            background: linear-gradient(to bottom, #f3f4f5, #f8f9fa);
+        }
+
+        .seat-layout-shell {
+            width: 100%;
+            max-width: 820px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            overflow-x: auto;
+            padding-bottom: 8px;
+        }
+
+        .seat-section {
+            border-top: 1px solid rgba(17,24,39,0.18);
+            padding-top: 18px;
+            margin-top: 6px;
+        }
+
+        .seat-section-title {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            color: #1f2937;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .seat-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            min-width: 660px;
+        }
+
+        .seat-number {
+            width: 32px;
+            height: 32px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 600;
+            color: #475569;
+            border-radius: 8px;
+            background: rgba(148,163,184,0.08);
+        }
+
+        .seat-group {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .seat-legend {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(17,24,39,0.12);
+        }
+
+        .legend-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: #374151;
+            font-weight: 600;
+        }
+
+        .legend-box {
+            width: 18px;
+            height: 18px;
+            border-radius: 6px;
+            border: 2px solid #d4d4d8;
+            background: #fff;
+        }
+
+        .legend-box.selected {
+            background: #1ca44c;
+            border-color: #1ca44c;
+        }
+
+        .legend-box.occupied {
+            background: #d9d9d9;
+            border-color: #d9d9d9;
+            position: relative;
+        }
+
+        .legend-box.occupied::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent 45%, rgba(0,0,0,0.35) 50%, transparent 55%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased pt-[72px] min-h-screen flex flex-col font-body-md text-body-md">
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  const movieCatalog = {
+    "Gladiator II": { title: "Gladiator II", rating: "R", duration: "2h 28m", genre: "Action, Drama", poster: "https://lh3.googleusercontent.com/aida-public/AB6AXuB-Nem0HG85HVDWqTznPEglFfx0nW6ECsAd-suzJ0wN9Po2Ai-tBU91LSAQpFmdTbOl_9mwhTFWGM29NQlGnh0FLBuk0qbJdj2w_T46hcLk6n5sQtOWW_Pmy7rYAM1RGUqC3WmHCMqpKtDm_StN_yTvuqmLT5o_118PXFuzL3CZ4GqzMxukCnXFLMDsAEmfIDQ2CXqbDcewuR9mTbJtHNf_ZUPryp9oSXIaxdhfvpwhJJaoOUoEPdXdIw" },
+    "Interstellar": { title: "Interstellar", rating: "PG-13", duration: "2h 49m", genre: "Sci-Fi, Adventure", poster: "https://lh3.googleusercontent.com/aida-public/AB6AXuDaKR8VvWMot5XJ4F856gdXHNU7Xt4osnB_DBu4mm_r15_gmgO3Lbr1hXokFVoq4y1taJ5R6Be-I61YIIXhbh5ZXRM44PwpFgKIA8gDBkDFkDzAVHgO6njVvLuRiMjvJJlfrlTgm_Zp4cEf7ObYe3WvD5_MLd7bLwT3HCKC3emzQCvsaYTMJWeg_qi3toKZOfVoiDmfd9z0jdeNVMqwX8_ZHdGW0lyPwuMO5Ikr3NR49mx4XOlJAJjd_g" },
+    "Neon Drive": { title: "Neon Drive", rating: "PG-13", duration: "1h 52m", genre: "Action, Thriller", poster: "https://lh3.googleusercontent.com/aida-public/AB6AXuBPRUgS96XsZm48P53kYWMlIqIAWILnGPuFb69iNPGYqo3DFhNKSo63qUYc8emQg8mHMfuLL6L_nipxW6G4IWbYvNL40ssb5UPPosdg42ECz4Emls3JTOM0NIIqwcNoyLPykEv_kpTkrORVVCBI33U1z7cU4dZabcDLjnCPnoktIvqrwOeBla5im2BYp3sjzWFeUCWMBROJxtN6TG_X2TQOmmw0WQppFM8n9lc_DWEiJh5_aU4YlXGOaA" },
+    "The Silent Partner": { title: "The Silent Partner", rating: "PG-13", duration: "2h 04m", genre: "Mystery, Drama", poster: "https://lh3.googleusercontent.com/aida-public/AB6AXuB9HO61BlstK6Gz9gUOTcDTR7eRL6Om5CICPmhDV_vYzAJbhkAF5W_SjNop9Y1vDUBV9hmPMvgUUzQh3KBYQ8Zyjagy_jmJNsc-VggeH4AiRQZC3b09Vq5KK397Tl3xVSr5b09rK9WOa9aIlxgMkIUtqZU73qgYGbrWG7FRp-Sm3SD0YWXVO4PFn95XEo-_cvYO1C3ZymlkT4s8HHr8JUT4DRRRKlEgufjHC7OcsXwbR3SNVAUAQBAV3w" },
+    "Timeless": { title: "Timeless", rating: "PG", duration: "1h 48m", genre: "Romance, Drama", poster: "https://lh3.googleusercontent.com/aida-public/AB6AXuCeBNy4hs2gnnCSQqn4onK5y_pyxcfRh0vB3o57ruIqZmVFGUVxFXZCKwm3DtucHir6xF_Uu9ME8eBUSYKNYb3ERGi89zeg0aWc7MOerFP9MHyJWEZBtXm-t0828tJA86WNVS9YjhQxXcguVMksop-jhaaym0ecP5HljWWc86zY2DpIyv8aUkcVXX6dQbkbyNILPeTThgjrtgctWNbSJYKJbPM4sv-oIDtVE6m_x19MWVM6Mizpkw0krA" },
+    "Dune: Part Two": { title: "Dune: Part Two", rating: "PG-13", duration: "2h 46m", genre: "Action, Sci-Fi", poster: "https://lh3.googleusercontent.com/aida-public/AB6AXuCMtmdB6JzdsOq-JYxZvSHGhTLhCzsdxhKffZic4fPDM7KJctKtlhyaGjRAP_TrGB785n_Wqp9hErTyju06xr61QD4hR57iwDdT9RJLZGxVOQzWYwV1MxYuZ5yywbFRtDOIDYs835E_bGidIsCwBFTf0s0STSawbecrcU7rYZVGWnOaI-F0eROUTJLMQmkmy6Gii04wJL71l5Jv8iwq4PdGi9b_SNGFpR4O9elZau0Pw4OPRvAF3tnzgg" }
+  };
+  const selectedMovie = new URLSearchParams(window.location.search).get('movie') || 'Dune: Part Two';
+  const movie = movieCatalog[selectedMovie] || movieCatalog['Dune: Part Two'];
+  const movieTitle = document.getElementById('final-movie-title');
+  if (movieTitle) movieTitle.textContent = movie.title;
+  const movieMeta = document.getElementById('final-movie-meta');
+  if (movieMeta) movieMeta.textContent = movie.genre + ' • ' + movie.duration + ' • ' + movie.rating;
+  const moviePoster = document.getElementById('final-movie-poster');
+  if (moviePoster) moviePoster.src = movie.poster;
+
+  const pageTitle = document.querySelector('title');
+  if (pageTitle) pageTitle.textContent = 'CineQuest - ' + movie.title;
+
+  const heroSummary = document.getElementById('final-summary-line');
+  if (heroSummary) heroSummary.textContent = movie.title + ' • IMAX 2D • 7:30 PM';
+
+  document.querySelectorAll('a[href*="Tiket.html"]').forEach((link) => {
+    const href = new URL(link.getAttribute('href'), window.location.href);
+    href.searchParams.set('movie', selectedMovie);
+    link.setAttribute('href', href.pathname + href.search);
+  });
+
+  const seatSections = [
+    {
+      title: '₹400 PRIME PLUS ROWS',
+      rows: [
+        { letter: 'A', seats: ['17','16','15','14','13','12','11','10','09','08','07','06','05','04','03','02','01'] },
+        { letter: 'B', seats: ['17','16','15','14','13','12','11','10','09','08','07','06','05','04','03','02','01'] }
+      ]
+    },
+    {
+      title: '₹340 PRIME ROWS',
+      rows: [
+        { letter: 'C', seats: ['17','16','15','14','13','12','11','10','09','08','07','06','05','04','03','02','01'] },
+        { letter: 'D', seats: ['17','16','15','14','13','12','11','10','09','08','07','06','05','04','03','02','01'] },
+        { letter: 'E', seats: ['17','16','15','14','13','12','11','10','09','08','07','06','05','04','03','02','01'] },
+        { letter: 'F', seats: ['17','16','15','14','13','12','11','10','09','08','07','06','05','04','03','02','01'] },
+        { letter: 'G', seats: ['17','16','15','14','13','12','11','10','09','08','07','06','05','04','03','02','01'] },
+        { letter: 'H', seats: ['17','16','15','14','13','12','11','10','09','08','07','06','05','04','03','02','01'] },
+        { letter: 'I', seats: ['17','16','15','14','13','12','11','10','09','08','07','06','05','04','03','02','01'] }
+      ]
+    },
+    {
+      title: '₹320 CLASSIC ROWS',
+      rows: [
+        { letter: 'J', seats: ['14','13','12','11','10','09','08','07','06','05','04','03','02','01'] },
+        { letter: 'K', seats: ['14','13','12','11','10','09','08','07','06','05','04','03','02','01'] }
+      ]
+    }
+  ];
+
+  const selectedSeatSet = new Set(['B7', 'B8']);
+  const seatMap = document.getElementById('seat-map');
+  const summarySeatList = document.getElementById('summary-seat-list');
+  const summarySeatTotal = document.getElementById('summary-seat-total');
+
+  function updateSummary() {
+    const seats = Array.from(selectedSeatSet).sort();
+    const seatCount = seats.length;
+    const seatPrice = seatCount * 15;
+    const convenienceFee = seatCount > 0 ? 1.50 : 0;
+    const total = seatPrice + convenienceFee;
+    
+    const seatText = seatCount ? seats.join(', ') : 'None selected';
+    if (summarySeatList) summarySeatList.textContent = seatText;
+    
+    const countLabel = document.getElementById('summary-seat-count');
+    if (countLabel) countLabel.textContent = 'Standard Seat (x' + seatCount + ')';
+    
+    const priceSpan = document.getElementById('summary-seat-price');
+    if (priceSpan) priceSpan.textContent = '$' + seatPrice.toFixed(2);
+    
+    const feeSpan = document.getElementById('summary-convenience-fee');
+    if (feeSpan) feeSpan.textContent = '$' + convenienceFee.toFixed(2);
+    
+    if (summarySeatTotal) summarySeatTotal.textContent = '$' + total.toFixed(2);
+  }
+
+  function createSeatButton(seatKey, state) {
+    const seatButton = document.createElement('button');
+    seatButton.type = 'button';
+    seatButton.className = 'seat ' + state;
+    seatButton.title = seatKey;
+    seatButton.setAttribute('aria-label', 'Seat ' + seatKey);
+    seatButton.dataset.seat = seatKey;
+
+    seatButton.addEventListener('click', () => {
+      if (seatButton.classList.contains('seat-occupied')) return;
+
+      const key = seatButton.dataset.seat;
+      if (selectedSeatSet.has(key)) {
+        selectedSeatSet.delete(key);
+        seatButton.classList.remove('seat-selected');
+        seatButton.classList.add('seat-available');
+      } else {
+        selectedSeatSet.add(key);
+        seatButton.classList.remove('seat-available');
+        seatButton.classList.add('seat-selected');
+      }
+
+      updateSummary();
+    });
+
+    return seatButton;
+  }
+
+  function renderSeatSection(section) {
+    const sectionWrap = document.createElement('div');
+    sectionWrap.className = 'seat-section';
+
+    const title = document.createElement('div');
+    title.className = 'seat-section-title';
+    title.textContent = section.title;
+    sectionWrap.appendChild(title);
+
+    section.rows.forEach((row) => {
+      const rowWrap = document.createElement('div');
+      rowWrap.className = 'seat-row';
+
+      const letterNode = document.createElement('div');
+      letterNode.className = 'seat-number';
+      letterNode.textContent = row.letter;
+      rowWrap.appendChild(letterNode);
+
+      const seatHolder = document.createElement('div');
+      seatHolder.className = 'seat-group';
+
+      row.seats.forEach((seatNumber) => {
+        const seatKey = row.letter + seatNumber;
+        let state = 'seat-available';
+        if (['A17','A16','A15','B17','B16','C17','D17','E17','F17','G17','H17','I17'].includes(seatKey)) {
+          state = 'seat-occupied';
+        }
+        if (selectedSeatSet.has(seatKey)) state = 'seat-selected';
+        seatHolder.appendChild(createSeatButton(seatKey, state));
+      });
+
+      rowWrap.appendChild(seatHolder);
+      sectionWrap.appendChild(rowWrap);
+    });
+
+    return sectionWrap;
+  }
+
+  if (seatMap) {
+    seatSections.forEach((section) => seatMap.appendChild(renderSeatSection(section)));
+  }
+
+  updateSummary();
+
+  const clearAllBtn = document.getElementById('clear-all-seats');
+  if (clearAllBtn) {
+    clearAllBtn.addEventListener('click', () => {
+      selectedSeatSet.forEach((seatKey) => {
+        const seatElement = document.querySelector('[data-seat="' + seatKey + '"]');
+        if (seatElement && !seatElement.classList.contains('seat-occupied')) {
+          seatElement.classList.remove('seat-selected');
+          seatElement.classList.add('seat-available');
+        }
+      });
+      selectedSeatSet.clear();
+      updateSummary();
+    });
+  }
+});
+</script>
+<!-- TopAppBar (Semantic Intent: Top-level booking flow, but usually hidden in deep checkout. Retained per prompt instructions.) -->
+<header class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-margin-desktop bg-inverse-surface dark:bg-inverse-surface shadow-md docked full-width top-0 h-[72px]">
+<div class="flex items-center gap-4 hover:opacity-80 transition-opacity cursor-pointer">
+<a href="Main.html" class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary dark:text-primary-container" style="font-variation-settings: 'FILL' 1;">movie</span>
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-container">CineQuest</span>
+</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+<span class="font-label-md text-label-md text-on-primary font-normal">Location</span>
+<span class="material-symbols-outlined text-on-primary">location_on</span>
+</button>
+</div>
+</header>
+<div class="max-w-container-max mx-auto w-full px-margin-desktop pt-6 flex items-center justify-between gap-4">
+    <a href="Tiket.html?movie=Dune%3A%20Part%20Two" class="inline-flex items-center gap-2 text-primary font-label-md text-label-md hover:underline">
+        <span class="material-symbols-outlined">arrow_back</span> Back to tickets
+    </a>
+    <a href="Main.html" class="inline-flex items-center gap-2 text-primary font-label-md text-label-md hover:underline">
+        <span class="material-symbols-outlined">home</span> Home
+    </a>
+</div>
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-desktop py-section-gap flex flex-col lg:flex-row gap-gutter">
+<!-- Left Column: Seat Map -->
+<section class="flex-grow bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] p-8 flex flex-col border border-surface-variant">
+<div class="mb-12 text-center">
+<div class="flex items-center justify-between gap-4 mb-4">
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Select Your Seats</h1>
+<button id="clear-all-seats" class="font-label-md text-label-md text-primary hover:text-on-primary bg-transparent hover:bg-primary hover:text-white px-4 py-2 rounded-lg transition-colors border border-primary">
+  Clear All
+</button>
+</div>
+<p id="final-summary-line" class="text-on-surface-variant font-body-md">Dune: Part Two • IMAX 2D • 7:30 PM</p>
+</div>
+<!-- Screen Area -->
+<div class="w-full max-w-3xl mx-auto mb-16 px-8">
+<div class="screen-curve mb-4"></div>
+<p class="text-center text-on-surface-variant font-label-md uppercase tracking-widest text-xs">Screen</p>
+</div>
+<!-- Seat Layout -->
+<div class="w-full max-w-4xl mx-auto overflow-x-auto pb-8">
+  <div id="seat-map" class="seat-layout-shell"></div>
+</div>
+<div class="seat-legend">
+  <div class="legend-item"><span class="legend-box"></span>Available</div>
+  <div class="legend-item"><span class="legend-box selected"></span>Selected</div>
+  <div class="legend-item"><span class="legend-box occupied"></span>Occupied</div>
+</div>
+</section>
+<!-- Right Column: Booking Summary -->
+<aside class="w-full lg:w-[400px] flex-shrink-0">
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-surface-variant p-6 sticky top-[104px]">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6 border-b border-surface-variant pb-4">Booking Summary</h2>
+<div class="flex gap-4 mb-6">
+<div class="w-20 h-28 bg-surface-variant rounded-md flex-shrink-0 overflow-hidden relative shadow-sm">
+<img id="final-movie-poster" class="w-full h-full object-cover" data-alt="A theatrical movie poster for a sci-fi epic set in a desert landscape, featuring a lone figure looking towards a massive sunset. High contrast, warm cinematic lighting, deep shadows, and an aura of grand adventure. Minimalist corporate modern style layout." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDx6uHCVlb4Opk6uj6TdXHAMjEyPPVYWDPmty-XJ7KVR5IkTm28gPfMO8BhISf8VQ51xu-4p6mtYv1noSudJJepJKEGohsnpPSvDp8LgNlWnVjH6IVcbAHv70cAqinJKSt1WtK6liBxWP50DSuL3qKeKPkaSN_jfeNdYnDKlg_Zc5MB22KkBltzE7Del1Gi8PhjVWJaSbIDnFlmaW3yHfUvbhn5jWQzmhl6Qb_FBQkKnpo8xBqKi7OXKQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#121212]/80 to-transparent"></div>
+</div>
+<div class="flex flex-col justify-center">
+<h3 id="final-movie-title" class="font-label-md text-label-md text-on-surface font-bold">Dune: Part Two</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">English • IMAX 2D</p>
+<p id="final-movie-meta" class="font-label-sm text-label-sm text-on-surface-variant mt-1">PG-13 • 2h 46m</p>
+</div>
+</div>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between items-start">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] mt-0.5">location_on</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface">CineQuest Grand Theater</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Screen 1, Downtown</p>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] mt-0.5">calendar_month</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Fri, Oct 24, 2024</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">7:30 PM</p>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] mt-0.5">chair</span>
+<div>
+<p id="summary-seat-list" class="font-label-md text-label-md text-on-surface">B7, B8</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Standard Seats</p>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-surface-variant pt-6 mb-8">
+<div class="flex justify-between items-center mb-2">
+<span id="summary-seat-count" class="font-body-md text-on-surface">Standard Seat (x2)</span>
+<span id="summary-seat-price" class="font-body-md text-on-surface">$30.00</span>
+</div>
+<div class="flex justify-between items-center mb-4">
+<span class="font-body-md text-on-surface-variant">Convenience Fee</span>
+<span id="summary-convenience-fee" class="font-body-md text-on-surface-variant">$3.00</span>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-surface-variant border-dashed">
+<span class="font-headline-md text-headline-md text-on-surface">Total</span>
+<span id="summary-seat-total" class="font-headline-md text-headline-md text-primary">$33.00</span>
+</div>
+</div>
+<a id="seat-summary-link" href="Main.html" class="w-full bg-[#E50914] text-white font-label-md text-label-md font-bold uppercase py-4 rounded-lg shadow-[0_4px_20px_rgba(229,9,20,0.2)] hover:bg-[#c0000c] hover:shadow-[0_6px_24px_rgba(229,9,20,0.3)] transition-all hover:scale-[1.02] active:scale-95 text-center block">
+                    Pay Now
+                </a>
+</div>
+</aside>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap px-margin-desktop flex flex-col md:flex-row justify-between items-center bg-surface-container-highest dark:bg-surface-container-highest border-t border-outline-variant mt-auto">
+<div class="mb-6 md:mb-0">
+<span class="font-headline-md text-headline-md text-primary font-bold">CineQuest</span>
+</div>
+<div class="flex flex-wrap justify-center gap-6 mb-6 md:mb-0">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Help Center</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Us</a>
+</div>
+<div>
+<span class="font-body-md text-body-md text-on-surface-variant">© 2024 CineQuest. All Rights Reserved.</span>
+</div>
+</footer>
+</body></html>

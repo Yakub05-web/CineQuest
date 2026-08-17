@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CineQuest - Premium Cinematic Experience</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary": "#b8000b",
+                      "background": "#f8f9fa",
+                      "surface-container-high": "#e7e8e9",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-container": "#f8f9ff",
+                      "on-tertiary-fixed-variant": "#004689",
+                      "on-primary-fixed": "#410001",
+                      "on-primary-container": "#fff7f6",
+                      "surface": "#f8f9fa",
+                      "on-secondary-fixed": "#1c1b1b",
+                      "on-secondary-fixed-variant": "#474646",
+                      "outline-variant": "#e9bcb6",
+                      "primary-fixed": "#ffdad5",
+                      "surface-container-low": "#f3f4f5",
+                      "on-background": "#191c1d",
+                      "tertiary-fixed-dim": "#a7c8ff",
+                      "tertiary-container": "#0072d7",
+                      "tertiary": "#005aab",
+                      "secondary": "#5f5e5e",
+                      "surface-container-highest": "#e1e3e4",
+                      "inverse-surface": "#2e3132",
+                      "tertiary-fixed": "#d5e3ff",
+                      "on-primary-fixed-variant": "#930007",
+                      "secondary-fixed": "#e5e2e1",
+                      "on-tertiary-fixed": "#001b3c",
+                      "surface-variant": "#e1e3e4",
+                      "on-secondary": "#ffffff",
+                      "inverse-primary": "#ffb4aa",
+                      "surface-tint": "#c0000c",
+                      "on-surface": "#191c1d",
+                      "on-surface-variant": "#5e3f3b",
+                      "surface-container": "#edeeef",
+                      "on-error-container": "#93000a",
+                      "outline": "#936e69",
+                      "inverse-on-surface": "#f0f1f2",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-container": "#e50914",
+                      "surface-bright": "#f8f9fa",
+                      "on-primary": "#ffffff",
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "error-container": "#ffdad6",
+                      "on-error": "#ffffff",
+                      "primary-fixed-dim": "#ffb4aa",
+                      "on-secondary-container": "#656464",
+                      "secondary-container": "#e5e2e1",
+                      "surface-dim": "#d9dadb",
+                      "error": "#ba1a1a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "section-gap": "80px",
+                      "container-max": "1280px",
+                      "margin-desktop": "48px",
+                      "margin-mobile": "16px",
+                      "base": "8px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "Montserrat"
+                      ],
+                      "display-lg": [
+                              "Montserrat"
+                      ],
+                      "headline-lg-mobile": [
+                              "Montserrat"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Montserrat"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .movie-card {
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease;
+        }
+        .movie-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0px 12px 32px rgba(0,0,0,0.12);
+        }
+        .gradient-overlay {
+            background: linear-gradient(to top, rgba(18, 18, 18, 0.9) 0%, rgba(18, 18, 18, 0.4) 50%, transparent 100%);
+        }
+      </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden pt-[72px]">
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  const movieCatalog = {
+    "Gladiator II": {
+      title: "Gladiator II",
+      tag: "Now Showing",
+      description: "Years after witnessing the death of the revered hero Maximus at the hands of his uncle, Lucius is forced to enter the Colosseum after his home is conquered by the tyrannical Emperors who now lead Rome with an iron fist.",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuB-Nem0HG85HVDWqTznPEglFfx0nW6ECsAd-suzJ0wN9Po2Ai-tBU91LSAQpFmdTbOl_9mwhTFWGM29NQlGnh0FLBuk0qbJdj2w_T46hcLk6n5sQtOWW_Pmy7rYAM1RGUqC3WmHCMqpKtDm_StN_yTvuqmLT5o_118PXFuzL3CZ4GqzMxukCnXFLMDsAEmfIDQ2CXqbDcewuR9mTbJtHNf_ZUPryp9oSXIaxdhfvpwhJJaoOUoEPdXdIw",
+      badge: "Now Showing"
+    },
+    "Interstellar": {
+      title: "Interstellar",
+      tag: "Featured",
+      description: "A team of explorers travels through a wormhole in search of a new home for humanity, facing impossible odds and the emotional cost of time itself.",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDaKR8VvWMot5XJ4F856gdXHNU7Xt4osnB_DBu4mm_r15_gmgO3Lbr1hXokFVoq4y1taJ5R6Be-I61YIIXhbh5ZXRM44PwpFgKIA8gDBkDFkDzAVHgO6njVvLuRiMjvJJlfrlTgm_Zp4cEf7ObYe3WvD5_MLd7bLwT3HCKC3emzQCvsaYTMJWeg_qi3toKZOfVoiDmfd9z0jdeNVMqwX8_ZHdGW0lyPwuMO5Ikr3NR49mx4XOlJAJjd_g",
+      badge: "Featured"
+    },
+    "Neon Drive": {
+      title: "Neon Drive",
+      tag: "Featured",
+      description: "A rogue driver enters the city's underground racing circuit to expose a criminal syndicate, but the price of the truth is faster than the speed of light.",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBPRUgS96XsZm48P53kYWMlIqIAWILnGPuFb69iNPGYqo3DFhNKSo63qUYc8emQg8mHMfuLL6L_nipxW6G4IWbYvNL40ssb5UPPosdg42ECz4Emls3JTOM0NIIqwcNoyLPykEv_kpTkrORVVCBI33U1z7cU4dZabcDLjnCPnoktIvqrwOeBla5im2BYp3sjzWFeUCWMBROJxtN6TG_X2TQOmmw0WQppFM8n9lc_DWEiJh5_aU4YlXGOaA",
+      badge: "Featured"
+    },
+    "The Silent Partner": {
+      title: "The Silent Partner",
+      tag: "New Release",
+      description: "A quiet strategist becomes the only person who can stop a chain of corporate betrayals before the next move destroys the city.",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuB9HO61BlstK6Gz9gUOTcDTR7eRL6Om5CICPmhDV_vYzAJbhkAF5W_SjNop9Y1vDUBV9hmPMvgUUzQh3KBYQ8Zyjagy_jmJNsc-VggeH4AiRQZC3b09Vq5KK397Tl3xVSr5b09rK9WOa9aIlxgMkIUtqZU73qgYGbrWG7FRp-Sm3SD0YWXVO4PFn95XEo-_cvYO1C3ZymlkT4s8HHr8JUT4DRRRKlEgufjHC7OcsXwbR3SNVAUAQBAV3w",
+      badge: "New Release"
+    },
+    "Timeless": {
+      title: "Timeless",
+      tag: "Romance",
+      description: "A delicate love story unfolds across generations as a forgotten watch unlocks memories that can change the future forever.",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCeBNy4hs2gnnCSQqn4onK5y_pyxcfRh0vB3o57ruIqZmVFGUVxFXZCKwm3DtucHir6xF_Uu9ME8eBUSYKNYb3ERGi89zeg0aWc7MOerFP9MHyJWEZBtXm-t0828tJA86WNVS9YjhQxXcguVMksop-jhaaym0ecP5HljWWc86zY2DpIyv8aUkcVXX6dQbkbyNILPeTThgjrtgctWNbSJYKJbPM4sv-oIDtVE6m_x19MWVM6Mizpkw0krA",
+      badge: "Romance"
+    },
+    "Dune: Part Two": {
+      title: "Dune: Part Two",
+      tag: "Now Showing",
+      description: "Paul Atreides unites with Chani and the Fremen while on a warpath of revenge against the conspirators who destroyed his family.",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCMtmdB6JzdsOq-JYxZvSHGhTLhCzsdxhKffZic4fPDM7KJctKtlhyaGjRAP_TrGB785n_Wqp9hErTyju06xr61QD4hR57iwDdT9RJLZGxVOQzWYwV1MxYuZ5yywbFRtDOIDYs835E_bGidIsCwBFTf0s0STSawbecrcU7rYZVGWnOaI-F0eROUTJLMQmkmy6Gii04wJL71l5Jv8iwq4PdGi9b_SNGFpR4O9elZau0Pw4OPRvAF3tnzgg",
+      badge: "Now Showing"
+    }
+  };
+
+  const selectedMovie = new URLSearchParams(window.location.search).get('movie') || 'Gladiator II';
+  const movie = movieCatalog[selectedMovie] || movieCatalog['Gladiator II'];
+
+  const heroImage = document.getElementById('hero-image');
+  if (heroImage) heroImage.src = movie.image;
+  const heroImageAlt = document.getElementById('hero-image-alt');
+  if (heroImageAlt) heroImageAlt.textContent = movie.title;
+  const heroBadge = document.getElementById('hero-badge');
+  if (heroBadge) heroBadge.textContent = movie.badge;
+  const heroTitle = document.getElementById('hero-title');
+  if (heroTitle) heroTitle.textContent = movie.title;
+  const heroDescription = document.getElementById('hero-description');
+  if (heroDescription) heroDescription.textContent = movie.description;
+  const heroCta = document.getElementById('hero-cta');
+  if (heroCta) {
+    const href = new URL('Date and main supply.html', window.location.href);
+    href.searchParams.set('movie', selectedMovie);
+    heroCta.href = href.href;
+  }
+});
+</script>
+<!-- TopAppBar -->
+<header class="bg-inverse-surface shadow-md fixed top-0 left-0 w-full z-50 flex items-center justify-between px-margin-desktop h-[72px]">
+<div class="flex items-center gap-4">
+<a href="Main.html" class="font-headline-md text-headline-md font-bold text-primary cursor-pointer hover:opacity-80 transition-opacity">CineQuest</a>
+</div>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-primary font-bold font-label-md text-label-md hover:opacity-80 transition-opacity" href="#">Movies</a>
+<a class="text-on-primary font-normal font-label-md text-label-md hover:opacity-80 transition-opacity" href="#">Cinemas</a>
+<a class="text-on-primary font-normal font-label-md text-label-md hover:opacity-80 transition-opacity" href="#">Search</a>
+<a class="text-on-primary font-normal font-label-md text-label-md hover:opacity-80 transition-opacity" href="#">Profile</a>
+</nav>
+<div class="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity text-primary">
+<span class="font-label-md text-label-md">Location</span>
+<span class="material-symbols-outlined text-primary">location_on</span>
+</div>
+</header>
+<!-- Main Content -->
+<main>
+<!-- Hero Banner -->
+<section class="relative w-full h-[70vh] min-h-[500px] flex items-end justify-start overflow-hidden">
+<div class="absolute inset-0 z-0 bg-inverse-surface">
+<img id="hero-image" alt="Gladiator II" class="w-full h-full object-cover opacity-80" data-alt="A massive, high-resolution cinematic wide shot from an epic historical drama like Gladiator II. The scene depicts a vast, dust-filled arena with colossal stone architecture in the background. Dramatic, high-contrast lighting with deep blacks, stark whites, and vibrant, intense crimson red accents on banners and armor. The mood is powerful, intense, and premium, perfectly suited for a wide-screen movie hero banner." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-Nem0HG85HVDWqTznPEglFfx0nW6ECsAd-suzJ0wN9Po2Ai-tBU91LSAQpFmdTbOl_9mwhTFWGM29NQlGnh0FLBuk0qbJdj2w_T46hcLk6n5sQtOWW_Pmy7rYAM1RGUqC3WmHCMqpKtDm_StN_yTvuqmLT5o_118PXFuzL3CZ4GqzMxukCnXFLMDsAEmfIDQ2CXqbDcewuR9mTbJtHNf_ZUPryp9oSXIaxdhfvpwhJJaoOUoEPdXdIw"/>
+<div class="absolute inset-0 gradient-overlay"></div>
+</div>
+<div class="relative z-10 w-full max-w-container-max mx-auto px-margin-desktop pb-section-gap">
+<div class="max-w-2xl">
+<span id="hero-badge" class="inline-block bg-primary text-on-primary font-label-sm text-label-sm font-bold uppercase tracking-widest px-3 py-1 rounded-sm mb-4">Now Showing</span>
+<h1 id="hero-title" class="font-display-lg text-display-lg text-on-primary mb-4 text-shadow-md">Gladiator II</h1>
+<p id="hero-description" class="font-body-lg text-body-lg text-on-primary mb-8 opacity-90 line-clamp-3">Years after witnessing the death of the revered hero Maximus at the hands of his uncle, Lucius is forced to enter the Colosseum after his home is conquered by the tyrannical Emperors who now lead Rome with an iron fist.</p>
+<div class="flex items-center gap-4">
+<a id="hero-cta" href="Date and main supply.html?movie=Gladiator II" class="bg-primary-container text-on-primary font-label-md text-label-md font-bold uppercase px-8 py-4 rounded-lg hover:bg-primary transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">confirmation_number</span>
+                            Book Tickets
+                        </a>
+<button class="border-2 border-on-primary text-on-primary font-label-md text-label-md font-bold uppercase px-8 py-4 rounded-lg hover:bg-on-primary hover:text-inverse-surface transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined">play_circle</span>
+                            Watch Trailer
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Now Showing Section -->
+<section class="max-w-container-max mx-auto px-margin-desktop py-section-gap">
+<div class="flex justify-between items-end mb-8">
+<h2 class="font-headline-lg text-headline-lg text-on-background">Now Showing</h2>
+<a class="text-primary font-label-md text-label-md hover:underline flex items-center gap-1" href="#">View All <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<!-- Movie Card 1 -->
+<div class="movie-card cursor-pointer group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm relative">
+<div class="aspect-[2/3] relative">
+<img alt="Interstellar" class="w-full h-full object-cover" data-alt="A dramatic movie poster for a sci-fi masterpiece like Interstellar. The artwork shows an astronaut standing on an alien landscape with a massive, swirling black hole dominating the sky above. The color palette emphasizes stark contrasts with deep space blacks, bright whites from stars, and striking red accents in the astronaut's suit details or UI elements. Premium, cinematic, and modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaKR8VvWMot5XJ4F856gdXHNU7Xt4osnB_DBu4mm_r15_gmgO3Lbr1hXokFVoq4y1taJ5R6Be-I61YIIXhbh5ZXRM44PwpFgKIA8gDBkDFkDzAVHgO6njVvLuRiMjvJJlfrlTgm_Zp4cEf7ObYe3WvD5_MLd7bLwT3HCKC3emzQCvsaYTMJWeg_qi3toKZOfVoiDmfd9z0jdeNVMqwX8_ZHdGW0lyPwuMO5Ikr3NR49mx4XOlJAJjd_g"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+<a href="Date and main supply.html?movie=Interstellar" class="bg-primary-container text-on-primary w-full py-2 rounded-md font-label-md text-label-md font-bold uppercase hover:bg-primary transition-colors text-center block">Book Now</a>
+</div>
+</div>
+<div class="p-4">
+<h3 class="font-headline-md text-[18px] leading-tight mb-1 truncate">Interstellar</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> 169 min</p>
+</div>
+</div>
+<!-- Movie Card 2 -->
+<div class="movie-card cursor-pointer group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm relative">
+<div class="aspect-[2/3] relative">
+<img alt="Neon Drive" class="w-full h-full object-cover" data-alt="A stylized movie poster for a high-octane thriller titled 'Neon Drive'. The poster features a sleek, futuristic car speeding down a wet, rain-slicked city street at night. The lighting is dominated by deep blacks and bright whites, violently punctuated by intense, glowing crimson red neon signs and taillights. Corporate modern aesthetic, minimalist typography layout." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPRUgS96XsZm48P53kYWMlIqIAWILnGPuFb69iNPGYqo3DFhNKSo63qUYc8emQg8mHMfuLL6L_nipxW6G4IWbYvNL40ssb5UPPosdg42ECz4Emls3JTOM0NIIqwcNoyLPykEv_kpTkrORVVCBI33U1z7cU4dZabcDLjnCPnoktIvqrwOeBla5im2BYp3sjzWFeUCWMBROJxtN6TG_X2TQOmmw0WQppFM8n9lc_DWEiJh5_aU4YlXGOaA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+<a href="Date and main supply.html?movie=Neon Drive" class="bg-primary-container text-on-primary w-full py-2 rounded-md font-label-md text-label-md font-bold uppercase hover:bg-primary transition-colors text-center block">Book Now</a>
+</div>
+</div>
+<div class="p-4">
+<h3 class="font-headline-md text-[18px] leading-tight mb-1 truncate">Neon Drive</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> 112 min</p>
+</div>
+</div>
+<!-- Movie Card 3 -->
+<div class="movie-card cursor-pointer group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm relative hidden md:block">
+<div class="aspect-[2/3] relative">
+<img alt="The Silent Partner" class="w-full h-full object-cover" data-alt="A tense, minimalist movie poster for a psychological drama. The image shows a silhouetted figure standing in a perfectly lit, modern corporate hallway. The palette is strictly high-contrast: deep shadows, blinding white geometric light fixtures, and a single, striking red element like a briefcase or a dropped rose. Premium, sophisticated, high-end cinematic feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9HO61BlstK6Gz9gUOTcDTR7eRL6Om5CICPmhDV_vYzAJbhkAF5W_SjNop9Y1vDUBV9hmPMvgUUzQh3KBYQ8Zyjagy_jmJNsc-VggeH4AiRQZC3b09Vq5KK397Tl3xVSr5b09rK9WOa9aIlxgMkIUtqZU73qgYGbrWG7FRp-Sm3SD0YWXVO4PFn95XEo-_cvYO1C3ZymlkT4s8HHr8JUT4DRRRKlEgufjHC7OcsXwbR3SNVAUAQBAV3w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+<a href="Date and main supply.html?movie=The Silent Partner" class="bg-primary-container text-on-primary w-full py-2 rounded-md font-label-md text-label-md font-bold uppercase hover:bg-primary transition-colors text-center block">Book Now</a>
+</div>
+</div>
+<div class="p-4">
+<h3 class="font-headline-md text-[18px] leading-tight mb-1 truncate">The Silent Partner</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> 124 min</p>
+</div>
+</div>
+<!-- Movie Card 4 -->
+<div class="movie-card cursor-pointer group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm relative hidden md:block">
+<div class="aspect-[2/3] relative">
+<img alt="Timeless" class="w-full h-full object-cover" data-alt="An elegant movie poster for a historical romance. The focus is on a finely detailed, antique pocket watch resting on crisp white silk. The background fades into deep charcoal black. Vibrant crimson red accents are subtly introduced through velvet ribbons near the watch. The overall mood is luxurious, timeless, and strictly adheres to the black, white, and red color scheme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeBNy4hs2gnnCSQqn4onK5y_pyxcfRh0vB3o57ruIqZmVFGUVxFXZCKwm3DtucHir6xF_Uu9ME8eBUSYKNYb3ERGi89zeg0aWc7MOerFP9MHyJWEZBtXm-t0828tJA86WNVS9YjhQxXcguVMksop-jhaaym0ecP5HljWWc86zY2DpIyv8aUkcVXX6dQbkbyNILPeTThgjrtgctWNbSJYKJbPM4sv-oIDtVE6m_x19MWVM6Mizpkw0krA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+<a href="Date and main supply.html?movie=Timeless" class="bg-primary-container text-on-primary w-full py-2 rounded-md font-label-md text-label-md font-bold uppercase hover:bg-primary transition-colors text-center block">Book Now</a>
+</div>
+</div>
+<div class="p-4">
+<h3 class="font-headline-md text-[18px] leading-tight mb-1 truncate">Timeless</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> 108 min</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap px-margin-desktop flex flex-col md:flex-row justify-between items-center bg-surface-container-highest border-t border-outline-variant">
+<div class="font-headline-md text-headline-md text-primary mb-4 md:mb-0">
+            CineQuest
+        </div>
+<nav class="flex flex-wrap justify-center gap-6 mb-4 md:mb-0">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Help Center</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Us</a>
+</nav>
+<div class="font-body-md text-body-md text-on-surface-variant">
+            © 2024 CineQuest. All Rights Reserved.
+        </div>
+</footer>
+</body></html>
